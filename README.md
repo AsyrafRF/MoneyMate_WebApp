@@ -119,6 +119,9 @@ Menampilkan:
 * Dapat melihat anggaran bulan sebelumnya
 * Bisa diedit dan dihapus
 
+Preview:
+![Anggaran_Warning](./assets/budgeting.gif)
+
 ---
 
 ## 3️⃣ Tujuan Finansial (Goals Tracking)

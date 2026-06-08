@@ -326,10 +326,12 @@ Menampilkan konsistensi pencatatan harian pengguna.
 
 # 🏗️ Target Pengguna
 
+* Pelajar
 * Mahasiswa
 * Pekerja
 * Freelancer
 * UMKM
+* Ibu Rumah Tangga
 * Individu yang ingin mengelola keuangan pribadi dengan lebih baik
 
 ---

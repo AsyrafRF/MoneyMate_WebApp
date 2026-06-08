@@ -332,6 +332,7 @@ Menampilkan konsistensi pencatatan harian pengguna.
 * Freelancer
 * UMKM
 * Ibu Rumah Tangga
+* Awam Finansial
 * Individu yang ingin mengelola keuangan pribadi dengan lebih baik
 
 ---

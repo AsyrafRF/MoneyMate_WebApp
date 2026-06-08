@@ -22,7 +22,7 @@ Dengan antarmuka yang sederhana namun informatif, MoneyMate memudahkan pengguna 
 ## 🖼️ Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MoneyMate-ID/MoneyMate_WebApp/refs/heads/main/homelanding.png" width="600" alt="Landing Preview">
+  <img src="https://raw.githubusercontent.com/MoneyMate-ID/MoneyMate_WebApp/refs/heads/main/assets/homelanding.png" width="600" alt="Landing Preview">
 </p>
 
 <p align="center">

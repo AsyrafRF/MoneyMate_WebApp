@@ -1,0 +1,57 @@
+/* Custom Styling untuk Tema #81b7ff */
+:root {
+    --primary-mm: #81b7ff;
+    --primary-mm-dark: #6fa3e6;
+}
+
+.text-primary-custom {
+    color: var(--primary-mm) !important;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-mm);
+    border-color: var(--primary-mm);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-mm-dark);
+    border-color: var(--primary-mm-dark);
+    transform: translateY(-1px);
+}
+
+.btn-primary-custom:disabled {
+    background-color: #cbdcf2;
+    border-color: #cbdcf2;
+}
+
+.border-primary-custom {
+    border-color: var(--primary-mm) !important;
+}
+
+.legal-container {
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-mm) #f8f9fa;
+}
+
+.legal-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.legal-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-mm);
+    border-radius: 10px;
+}
+
+.custom-check:checked {
+    background-color: var(--primary-mm);
+    border-color: var(--primary-mm);
+}
+
+.legal-content-wrapper h2 {
+    margin-top: 1.5rem;
+}

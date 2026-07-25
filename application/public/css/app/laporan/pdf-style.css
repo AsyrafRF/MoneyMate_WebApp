@@ -1,0 +1,161 @@
+/* ================================ */
+/* FONT GLOBAL */
+/* ================================ */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* ================================ */
+/* SETTING HALAMAN (MARGIN) */
+/* ================================ */
+@page {
+    /* Memberikan ruang 50px di bawah untuk footer agar tidak menabrak teks */
+    margin: 20px 30px 50px 30px;
+}
+
+/* ================================ */
+/* TABLE (MODERN & PROFESSIONAL)    */
+/* ================================ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Header Tabel Modern */
+th {
+    background-color: #0b2b48;
+    /* Menyamakan dengan warna tema header Anda */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 8px 10px;
+}
+
+/* Default Cell styling (Hanya menggunakan garis horizontal tipis) */
+td {
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #334155;
+}
+
+/* Efek zebra striping (opsional, membantu keterbacaan data banyak) */
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Menghilangkan garis bawah pada baris terakhir tabel */
+tbody tr:last-child td {
+    border-bottom: 2px solid #0b2b48;
+}
+
+/* Desain Tabel Informasi Pribadi (Tanpa Border) */
+.table-no-border td,
+.table-no-border th {
+    border: none !important;
+    background: transparent !important;
+    padding: 4px 0px;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+/* utility kelas untuk perataan data keuangan */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Kolom Nominal wajib rata kanan & tidak terpotong */
+.nominal-col {
+    white-space: nowrap;
+    text-align: right;
+    font-weight: 600;
+}
+
+.expenses {
+    color: red;
+}
+
+.incomes {
+    color: green;
+}
+
+/* ================================ */
+/* TITLES */
+/* ================================ */
+h3,
+h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #0b2b48;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+/* ================================ */
+/* BADGES */
+/* ================================ */
+.badge-green {
+    background: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.badge-red {
+    background: #dc3545;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* ================================ */
+/* SUMMARY BOX */
+/* ================================ */
+.summary-box {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: #f4f4f4;
+    padding: 10px;
+    width: 250px;
+    float: right;
+    margin-top: 20px;
+    font-size: 13px;
+
+    /* 🔥 TAMBAHKAN INI AGAR TIDAK TERPOTONG HALAMAN */
+    page-break-inside: avoid;
+}
+
+/* 🔥 TAMBAHKAN KELAS BARU UNTUK CLEAR FIX TRICK */
+.clearfix {
+    clear: both;
+}
+
+.right {
+    text-align: right;
+}

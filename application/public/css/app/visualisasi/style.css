@@ -1,0 +1,554 @@
+/* ============================================
+   GLOBAL CARD & LAYOUT
+============================================ */
+/* Memastikan chart tetap proporsional dan tidak 'pecah' */
+.chart-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Menjaga bentuk lingkaran sempurna */
+}
+
+/* Kontainer luar (Pembungkus Legend) */
+.legend-box {
+    max-height: 120px;
+    /* Batasi tinggi maksimal agar tidak merusak layout ke bawah */
+    overflow-y: auto;
+    /* Otomatis memunculkan scrollbar vertikal jika item > 35 */
+    padding-right: 5px;
+    /* Memberikan ruang di kanan agar scrollbar tidak menutupi teks */
+}
+
+/* Kustomisasi scrollbar agar terlihat modern dan tipis */
+.legend-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.legend-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.legend-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    /* Warna abu-abu soft */
+    border-radius: 4px;
+}
+
+/* ID Legend (Tetap seperti milikmu, hilangkan max-height di sini) */
+#donutLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Item List di dalam Legend */
+#donutLegend li {
+    font-size: 0.8rem;
+    /* Sedikit diperkecil agar pas dengan 35 warna */
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+/* Efek hover opsional agar lebih interaktif */
+#donutLegend li:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.chart-card {
+    border-radius: 20px;
+    border: 1px groove #c8d7d8ff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Animasi sederhana saat hover */
+.chart-card:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.chart-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    /* Menjaga agar di layar desktop sangat lebar, chart tidak pecah */
+    max-width: 450px;
+}
+
+/* Penting untuk Chart.js agar responsif */
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Wrapper untuk legend */
+.legend-container {
+    flex: 1;
+    padding-left: 10px;
+    /* max-width: 380px; */
+    max-width: 420px;
+    /* batas aman desktop */
+    width: 100%;
+}
+
+/* ============================================
+   donut LEGEND
+============================================ */
+/* Jarak antar chart & legend */
+.chart-body-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    /* jarak besar seperti contoh */
+    padding-right: 10px;
+}
+
+.donut-legend-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* space antar item legend */
+}
+
+.donut-legend-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 4px 0;
+    gap: 12px; */
+    flex-wrap: wrap;
+}
+
+.legend-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* gap: 8px;
+    flex: 1 1 auto; */
+}
+
+.legend-dot {
+    /* width: 14px;
+    height: 14px; */
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-label {
+    /* white-space: nowrap; */
+    /* font-size: 14px; */
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.legend-value {
+    font-weight: 700;
+    font-size: 15px;
+    /* white-space: nowrap; */
+}
+
+/* -----------------------------
+   SUPER RESPONSIVE BREAKPOINTS
+------------------------------ */
+
+/* XXL — layar sangat besar (≥1600px) */
+@media (max-width: 1600px) {
+    .legend-container {
+        max-width: 380px;
+    }
+}
+
+/* XL — desktop besar (≥1400px) */
+@media (max-width: 1400px) {
+    .legend-container {
+        max-width: 350px;
+    }
+
+    .legend-label {
+        font-size: 13.5px;
+    }
+}
+
+/* LG — laptop besar (≥1200px) */
+@media (max-width: 1200px) {
+    .donut-legend-list li {
+        gap: 10px;
+    }
+
+    .legend-container {
+        max-width: 330px;
+    }
+}
+
+/* MD+ — laptop medium (≥992px) */
+@media (max-width: 1050px) {
+    .donut-legend-list li {
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .legend-container {
+        max-width: 100%;
+    }
+}
+
+/* MD — tablet landscape (≥992px) */
+@media (max-width: 992px) {
+    .legend-label {
+        font-size: 13px;
+    }
+
+    .legend-container {
+        max-width: 100%;
+    }
+}
+
+/* SM+ — tablet portrait / small laptop (≥768px) */
+@media (max-width: 820px) {
+    .donut-legend-list li {
+        width: 48%;
+        justify-content: flex-start;
+    }
+
+    .legend-left {
+        min-width: unset;
+    }
+}
+
+/* SM — mobile besar (≥576px) */
+@media (max-width: 650px) {
+    .donut-legend-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .donut-legend-list li {
+        width: 48%;
+    }
+}
+
+/* XS+ — mobile sedang */
+@media (max-width: 480px) {
+    .donut-legend-list li {
+        width: 100%;
+        padding: 2px 0;
+    }
+
+    .legend-label,
+    .legend-value {
+        font-size: 12.5px;
+    }
+}
+
+/* XS — mobile kecil (<380px) */
+@media (max-width: 380px) {
+    .legend-label {
+        font-size: 11.5px;
+    }
+
+    .legend-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Tablet Portrait (576px to 767px) */
+@media (max-width: 767px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+        /* align-items: stretch !important; */
+    }
+}
+
+/* ===========================================================
+   FIX RESPONSIVE UTAMA – donut CHART + LEGEND STACK DI BAWAH
+   AGAR LEGEND TIDAK MENEMBUS CARD
+=========================================================== */
+@media (max-width: 1150px) {
+    .card-body.d-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .legend-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .donut-legend-list {
+        width: 100%;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        gap: 8px;
+    }
+
+    .donut-legend-list li {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+}
+
+@media (max-width: 1300px) {
+
+    .legend-container,
+    .total-expense,
+    #totalPengeluaranText {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .legend-container,
+    .total-expense,
+    #totalPengeluaranText {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1150px) {
+    .chart-body-flex {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 850px) {
+    .chart-body-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .legend-container {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* ============================================
+   REPORT DOWNLOAD CARD
+============================================ */
+.report-download-card {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Menjamin card body menggunakan model flexbox vertikal */
+.report-download-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.report-card-header {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: #ffffff;
+    padding: 1rem 1.25rem;
+    /* Menggunakan satuan rem agar sinkron dengan spacing Bootstrap */
+    border-top-left-radius: 16px;
+    /* Menyesuaikan border-radius luar card Bootstrap modern */
+    border-top-right-radius: 16px;
+    /* Menghindari bocor sudut jika card utama memakai rounded-4 atau 16px */
+    font-weight: 700;
+    /* Lebih spesifik dibanding 'bold' */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    /* Menggunakan rem agar proporsional saat ada scaling text */
+}
+
+.btn-unduh {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.btn-unduh:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.25) !important;
+}
+
+.input-range-divider {
+    width: 20px;
+    text-align: center;
+    font-size: small;
+}
+
+/* ============================================
+   BREAKPOINT: 1300px ke bawah
+   ============================================ */
+@media (max-width: 1300px) {
+
+    /* Ubah layout jadi vertikal/stacked */
+    .chart-body-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Legend jadi compact & scrollable */
+    .legend-container {
+        width: 100% !important;
+        max-height: 150px !important;
+        overflow-y: auto !important;
+        margin-top: 1rem !important;
+    }
+
+    /* Scrollbar styling */
+    .legend-container::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .legend-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+    }
+
+    /* Legend items lebih rapat */
+    .donut-legend-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .donut-legend-list li {
+        padding: 5px 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.85rem !important;
+    }
+
+    .donut-legend-list li:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Total expense center & compact */
+    .total-expense {
+        text-align: center !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Reset grow container */
+    .grow {
+        padding: 0.5rem 1rem 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* ============================================
+   BREAKPOINT: 1150px ke bawah
+   ============================================ */
+@media (max-width: 1150px) {
+
+    .legend-container {
+        max-height: 130px !important;
+    }
+
+    .donut-legend-list li {
+        font-size: 0.8rem !important;
+        padding: 4px 0 !important;
+    }
+
+    .total-expense {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ============================================
+   BREAKPOINT: 911px ke bawah (Tablet portrait)
+   ============================================ */
+@media (max-width: 911px) {
+    .legend-container {
+        max-height: 110px !important;
+    }
+
+    /* Buat legend 2 kolom untuk hemat ruang */
+    .donut-legend-list {
+        columns: 2 !important;
+        column-gap: 0.75rem !important;
+    }
+
+    .donut-legend-list li {
+        break-inside: avoid !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 5px !important;
+    }
+
+    .legend-left {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+
+    .legend-label {
+        font-size: 0.75rem !important;
+    }
+
+    .legend-value {
+        font-size: 0.75rem !important;
+    }
+
+    .legend-dot {
+        width: 10px !important;
+        height: 10px !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* Efek Hover Halus pada Kartu */
+.chart-card,
+.report-download-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px !important;
+}
+
+/* Custom Input Field */
+.form-control-custom {
+    border: 1.5px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-control-custom:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+}
+
+/* Badge Premium dengan Gradasi */
+.bg-premium-gradient {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Warna premium mewah alternatif */
+}
+
+/* Setelan Spasi Text */
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+/* Modifikasi Dropdown Menu */
+.dropdown-menu {
+    border-radius: 12px !important;
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}

@@ -1,0 +1,57 @@
+/* public\css\costum.css */
+
+.logo-circle-bg {
+    /* Ukuran lingkaran */
+    width: 60px; /* Sesuaikan ukuran jika perlu */
+    height: 60px;
+    
+    /* Bentuk lingkaran */
+    border-radius: 50%;
+    
+    /* Warna latar belakang (ambil warna biru dari tombol Daftar) */
+    background-color: #0d6efd; /* Ini adalah warna default biru Bootstrap, sesuaikan dengan tema Anda */
+    
+    /* Mengatur posisi logo di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Margin bawah untuk memberi jarak dengan teks MoneyMate */
+    margin: 0 auto 10px auto; 
+}
+
+/* Pastikan logo di dalamnya berwarna putih dan ukurannya pas */
+.logo-circle-bg img {
+    width: 30px; /* Sesuaikan agar lebih kecil dari 60px */
+    height: 30px; /* Sesuaikan agar lebih kecil dari 60px */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    filter: none;
+    /* border: 2px solid red; untuk cek apakah lingkarannya muncul */
+    /* filter: brightness(0) invert(1); Membuat gambar logo menjadi putih */
+}
+
+
+/* Scroll Down Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* jarak dari bawah hero */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #3182ce;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+    40% { transform: translate(-50%, -10px); }
+    60% { transform: translate(-50%, -5px); }
+}
+
+.scroll-down a {
+    text-decoration: none;
+    color: inherit;
+}
+.scroll-down a:hover {
+    color: #2c5282;
+}

@@ -1,0 +1,56 @@
+.contact-card {
+    background: linear-gradient(90deg, rgba(16, 62, 91, 0.9), rgba(42, 143, 230, 0.7));
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 450px;
+    overflow: hidden;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #f8f9fa; 
+    color: #1B94D7; 
+    transition: 0.3s;
+}
+
+.contact-logo {
+    height: 60px; /* Atur tinggi yang konsisten */
+    width: auto;  /* Biarkan lebar menyesuaikan proporsi */
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #ffffff48;
+    transition: all 0.3s ease;
+    /* Memberikan efek bayangan lembut agar logo 'mengambang' */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+}
+
+.contact-logo:hover {
+    transform: scale(1.05); /* Sedikit membesar saat di-hover */
+    filter: drop-shadow(0 6px 12px rgba(27, 148, 215, 0.2)); /* Glow warna brand */
+}
+
+.contact-card:hover .icon-box {
+    background-color: #1b95d700;
+    color: white;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.contact-link:hover {
+    color: #1B94D7;
+}

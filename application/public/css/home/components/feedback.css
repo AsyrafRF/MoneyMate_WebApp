@@ -1,0 +1,28 @@
+.rating-item {
+    cursor: pointer;
+    flex: 1;
+}
+
+.rating-item input {
+    display: none;
+}
+
+.rating-item .emoji {
+    font-size: 2rem;
+    filter: grayscale(100%);
+    transition: 0.2s;
+}
+
+.rating-item small {
+    display: block;
+    color: #6c757d;
+}
+
+.rating-item input:checked + .emoji {
+    filter: grayscale(0);
+    transform: scale(1.2);
+}
+
+.rating-item:hover .emoji {
+    filter: grayscale(0);
+}

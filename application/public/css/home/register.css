@@ -1,0 +1,80 @@
+/* Container Utama Footer */
+.money-mate-footer {
+    background: linear-gradient(160deg, var(--dark-bg) 0%, #0f172a 100%);
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #e6f1ff;
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
+}
+
+/* Konten Tengah */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Gaya Brand MoneyMate */
+.brand-name {
+    color: #152947;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px rgba(55, 92, 212, 0.3);
+}
+
+.brand-name span {
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Gaya Teks Developed by */
+.dev-text {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Aksen Neon Emas */
+.text-accent {
+    color: #2087bf;
+    font-weight: 700;
+    font-family: 'Monaco', 'Consolas', monospace; /* Gaya tech/code */
+    padding: 2px 8px;
+    border: 1px solid rgba(23, 197, 197, 0.3);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+/* Efek Hover Glow */
+.text-accent:hover {
+    background: rgba(0, 247, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    transform: translateY(-2px);
+    letter-spacing: 1px;
+}
+
+/* Garis Dekoratif di Bawah */
+.footer-glow-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #37cfd4, transparent);
+    box-shadow: 0 0 10px #00eeff;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 480px) {
+    .brand-name { font-size: 0.9rem; }
+    .dev-text { font-size: 0.75rem; }
+}

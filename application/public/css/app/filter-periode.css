@@ -1,0 +1,472 @@
+/* ===================================
+   CSS CUSTOM PROPERTIES
+   =================================== */
+:root {
+    --primary: #0984e3;
+    --primary-light: #74b9ff;
+    --primary-gradient: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    --primary-shadow: rgba(9, 132, 227, 0.3);
+    --primary-shadow-hover: rgba(9, 132, 227, 0.4);
+    --primary-focus: rgba(9, 132, 227, 0.1);
+    
+    --surface: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.95);
+    --surface-glass-heavy: rgba(255, 255, 255, 0.92);
+    
+    --border: rgba(0, 0, 0, 0.08);
+    --border-input: #e0e0e0;
+    
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-muted: #757575;
+    
+    --danger: #dc3545;
+    --danger-bg: #ffecec;
+    --danger-bg-light: #fff0f0;
+    --danger-text: #b40000;
+    --success: #198754;
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 45px;
+    
+    --shadow-sm: 0 4px 12px var(--primary-shadow);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.25s ease;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --z-filter: 1040;
+    --z-calendar: 1060;
+    --z-modal: 9999;
+}
+
+/* ===================================
+   BASE RESET & UTILITIES
+   =================================== */
+/* Remove default date icon */
+input[type="text"] {
+    appearance: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+/* Print */
+@media print {
+    .filter-wrapper { display: none; }
+}
+
+/* ===================================
+   FILTER WRAPPER & CARD (CONSOLIDATED)
+   =================================== */
+.filter-wrapper {
+    position: relative;
+}
+
+.filter-card {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 280px;
+    z-index: var(--z-filter);
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95) translateY(-8px);
+    transform-origin: top right;
+    transition: all var(--transition-smooth);
+}
+
+.filter-card.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+}
+
+.filter-card form {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-card form label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.filter-card form input,
+.filter-card form select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.filter-card form input:focus,
+.filter-card form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-focus);
+}
+
+.filter-card form button {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.filter-card form button:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   FLOATING INPUT GROUPS
+   =================================== */
+.floating-group {
+    position: relative;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem);
+}
+
+.floating-input {
+    width: 100%;
+    padding: clamp(10px, 1.5vh, 12px) clamp(12px, 2vw, 16px);
+    border: 2px solid var(--border-input);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.floating-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-focus);
+}
+
+.floating-group label,
+.floating-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--surface);
+    padding: 0 8px;
+    color: var(--text-muted);
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+    pointer-events: none;
+    transition: all var(--transition-normal);
+}
+
+.floating-group label.floated {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.floating-input:focus + label,
+.floating-input:focus ~ label,
+.floating-input:not(:placeholder-shown) + label,
+.floating-input:not(:placeholder-shown) ~ label {
+    top: 0;
+    transform: translateY(-1.5rem) scale(0.85);
+    font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ===================================
+   GRADIENT BUTTON
+   =================================== */
+.btn-gradient {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: clamp(0.5rem, 1.2vh, 0.65rem) clamp(1rem, 2vw, 1.5rem);
+    border-radius: var(--radius-md);
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-normal);
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--primary-shadow-hover);
+}
+
+/* Filter toggle */
+#filterToggle {
+    transition: var(--transition-normal);
+}
+
+#filterToggle:hover {
+    background-color: #e3f2fd;
+    transform: rotate(10deg);
+}
+
+/* ===================================
+   FLATPICKR - BASE CALENDAR
+   =================================== */
+.flatpickr-calendar {
+    z-index: var(--z-calendar);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: none;
+    padding-bottom: 8px;
+    overflow: hidden;
+}
+
+/* Cegah overflow horizontal kalender */
+.flatpickr-calendar {
+    max-width: calc(100vw - 20px);
+}
+
+/* ===================================
+   FLATPICKR - DAY PICKER
+   =================================== */
+.flatpickr-day {
+    border-radius: var(--radius-sm);
+    transition: all 0.25s ease-in-out;
+}
+
+.flatpickr-day:hover {
+    transform: scale(1.05);
+    background-color: #e3f2fd;
+    border-radius: 50%;
+}
+
+.flatpickr-day.inRange,
+.flatpickr-day.rangeStart,
+.flatpickr-day.rangeEnd {
+    border-radius: 50%;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: var(--primary);
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary);
+}
+
+.flatpickr-day.inactive,
+.flatpickr-day.inactive-day {
+    opacity: 0.35;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* ===================================
+   FLATPICKR - WEEK PICKER
+   =================================== */
+.flatpickr-day.active-day {
+    background: var(--primary-light);
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(9, 132, 227, 0.5);
+}
+
+.flatpickr-day.range-day {
+    background: #80bcf8;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(9, 132, 227, 0.5);
+}
+
+/* ===================================
+   FLATPICKR - MONTH SELECT
+   =================================== */
+.flatpickr-monthSelect-months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.flatpickr-monthSelect-month {
+    width: calc(33.33% - 12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    border-radius: var(--radius-pill);
+    background: #f2f6ff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.flatpickr-monthSelect-month:hover {
+    transform: scale(1.08);
+    background: #e5efff;
+}
+
+.flatpickr-monthSelect-month.selected {
+    background: var(--primary-gradient);
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.05);
+}
+
+/* ===================================
+   STATUS COLORS
+   =================================== */
+.text-danger {
+    color: var(--danger);
+}
+
+.text-danger.fw-bold {
+    font-weight: 700;
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-success-card {
+    color: white;
+}
+
+.table-danger {
+    background-color: var(--danger-bg);
+}
+
+.table-danger td {
+    background: #ffe5e5;
+}
+
+.alert-danger {
+    border-left: 6px solid var(--danger);
+    background: var(--danger-bg-light);
+    color: var(--danger-text);
+}
+
+.alert .btn-close {
+    opacity: 0.7;
+    transition: all var(--transition-fast);
+}
+
+.alert .btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.row-alert {
+    transition: all 0.5s ease;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes filterSlideIn {
+    from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes filterSlideOut {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(-8px) scale(0.96); }
+}
+
+/* ===================================
+   RESPONSIVE (CONSOLIDATED)
+   =================================== */
+
+/* Mobile Small */
+@media (max-width: 380px) {
+    .filter-card { width: 240px; }
+    .flatpickr-monthSelect-month { height: 50px; font-size: 12px; }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .filter-card { 
+        width: calc(100vw - 24px); 
+        right: -130px; 
+    }
+    .flatpickr-calendar {
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 767px) {
+    .filter-card { width: 280px; }
+}
+
+/* Tablet Landscape */
+@media (max-width: 991px) {
+    .filter-card { width: 300px; }
+}
+
+/* Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .filter-card {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}

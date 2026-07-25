@@ -1,0 +1,21 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Kategori>
+ */
+class KategoriFactory extends Factory
+{
+    public function definition(): array
+    {
+        $jenis = $this->faker->randomElement(['pemasukan', 'pengeluaran']);
+
+        return [
+            'nama_kategori' => ucfirst($this->faker->unique()->words(2, true)), // contoh: "Biaya Listrik"
+            'jenis' => $jenis,
+        ];
+    }
+}

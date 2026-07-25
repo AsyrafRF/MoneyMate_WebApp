@@ -1,0 +1,194 @@
+/* ============================
+   Social Media Card
+   ============================ */
+.social-card {
+    background: linear-gradient(90deg, rgba(16, 62, 91, 0.9), rgba(42, 143, 230, 0.7));
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    position: relative;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1B94D7, transparent);
+    border-radius: 2px;
+}
+
+.soc-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 20px 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.soc-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 14px 14px 0 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.soc-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.soc-item:hover::before {
+    opacity: 1;
+}
+
+.soc-item:hover .soc-icon-wrap {
+    transform: scale(1.1);
+}
+
+.soc-item:hover .soc-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Instagram --- */
+.soc-instagram::before {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.soc-instagram:hover {
+    background: linear-gradient(160deg, rgba(240, 148, 51, 0.1), rgba(220, 39, 67, 0.05));
+    border-color: rgba(225, 48, 108, 0.25);
+    box-shadow: 0 8px 30px rgba(225, 48, 108, 0.15);
+}
+.soc-instagram .soc-icon-wrap {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: #fff;
+}
+
+/* --- X / Twitter --- */
+.soc-x::before {
+    background: #ffffff;
+}
+.soc-x:hover {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.07);
+}
+.soc-x .soc-icon-wrap {
+    background: #ffffff;
+    color: #000;
+}
+
+/* --- TikTok --- */
+.soc-tiktok::before {
+    background: linear-gradient(145deg, #1a1d23 0%, #12151a 100%);
+}
+.soc-tiktok:hover {
+    background: linear-gradient(160deg, rgba(37, 244, 238, 0.1), rgba(254, 44, 85, 0.05));
+    border-color: rgba(37, 244, 238, 0.25);
+    box-shadow: 0 8px 30px rgba(37, 244, 238, 0.12);
+}
+.soc-tiktok .soc-icon-wrap {
+    background: linear-gradient(145deg, #1a1d23 0%, #12151a 100%);
+    color: #fff;
+}
+
+/* --- Discord --- */
+.soc-discord::before {
+    background: #5865F2;
+}
+.soc-discord:hover {
+    background: linear-gradient(160deg, rgba(88, 101, 242, 0.12), rgba(88, 101, 242, 0.04));
+    border-color: rgba(88, 101, 242, 0.3);
+    box-shadow: 0 8px 30px rgba(88, 101, 242, 0.18);
+}
+.soc-discord .soc-icon-wrap {
+    background: #5865F2;
+    color: #fff;
+}
+
+/* --- Shared Elements --- */
+.soc-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-bottom: 4px;
+}
+
+.soc-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.soc-handle {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+}
+
+.soc-arrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.35s ease;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 767.98px) {
+    .soc-item {
+        padding: 16px 10px;
+    }
+
+    .soc-icon-wrap {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .soc-name {
+        font-size: 12px;
+    }
+
+    .soc-handle {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .social-card .row {
+        gap: 0.5rem !important;
+    }
+    .social-card .row > [class*="col-"] {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}

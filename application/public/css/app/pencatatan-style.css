@@ -1,0 +1,328 @@
+/* ===================================
+   BACKGROUND THEME
+   =================================== */
+
+.bg-general-secondary {
+    background: linear-gradient(180deg, #1f2a44 0%, #2c3e50 100%);
+    color: #fff;
+}
+
+/* ===================================
+   ICONS & ASSETS
+   =================================== */
+
+/* Icon Moneymate di Title Pencatatan */
+.rounded-img {
+    border-radius: 12px;
+    /* sudut membulat */
+    width: 38px;
+    height: auto;
+    border: 2px solid black;
+    /* warna border hijau */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    /* shadow lembut */
+}
+
+/* ===================================
+   Header - Title
+   =================================== */
+
+.page-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    background: #333f4bff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 12px);
+    flex-wrap: wrap;
+}
+
+/* Garis aksen di bawah judul */
+/* .page-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    border-radius: 2px;
+} */
+
+/* Ikon di depan teks */
+.page-title i {
+    color: #0984e3;
+    font-size: 1.6rem;
+    vertical-align: middle;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    animation: fadeSlide 0.5s ease-out;
+}
+
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .page-title {
+        font-size: 1.1rem;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   MODAL STYLE
+   =================================== */
+/* Modal responsive: mengikuti bootstrap namun tetap fleksibel */
+/* .modal-dialog {
+    width: 100%;
+    max-width: 90vw;             fleksibel untuk tablet
+    max-width: clamp(500px, 80vw, 800px); 
+    margin: clamp(0.75rem, 2vh, 1.75rem) auto;
+}
+
+Centering default bootstrap + responsive jarak atas bawah
+.modal-dialog-centered {
+    min-height: calc(100% - clamp(1.5rem, 4vh, 3.5rem));
+}
+
+Responsif: tetap mengikuti gaya Bootstrap
+.modal-content {
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+Header
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: clamp(0.75rem, 2vh, 1rem) 
+             clamp(1rem, 2vw, 1.5rem);
+}
+
+Judul modal
+.modal-header h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin: 0;
+}
+
+Body modal
+.modal-body {
+    padding: clamp(1rem, 2vh, 1.5rem);
+}
+*/
+
+.modal-body {
+    overflow-x: hidden !important;
+}
+
+/*
+Tambahan opsional: modal lebih enak dibaca di HP
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 95vw;
+        margin: 0.5rem auto;
+    }
+
+    .modal-content {
+        border-radius: 0.4rem;
+    }
+}
+
+Base modal (desktop/tablet tetap normal)
+.modal-dialog {
+    width: 100%;
+    max-width: clamp(500px, 80vw, 800px);
+    margin: clamp(0.75rem, 2vh, 1.75rem) auto;
+} */
+
+/* Fullscreen di HP */
+/* @media (max-width: 575.98px) {
+    .modal-dialog {
+        max-width: 100vw;
+        height: 100vh;
+        margin: 0;                  hilangkan gap
+    }
+
+    .modal-content {
+        height: 100vh;              full tinggi
+        border-radius: 0;           full screen look
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-header, .modal-footer {
+        padding: 1rem;
+        flex-shrink: 0;             fix header/footer
+    }
+
+    .modal-body {
+        overflow-y: auto;
+        flex: 1;                    isi area tengah
+        padding: 1rem;
+    }
+} */
+
+/* Modal detail saldo — ukuran normal mengikuti konten */
+.modal-detail-saldo {
+    width: 100%;
+    max-width: 500px;
+    /* ukuran wajar (seperti Bootstrap default) */
+    margin: 1.5rem auto;
+}
+
+.modal-detail-saldo .modal-content {
+    border-radius: 12px;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-detail-saldo .modal-body {
+    padding: 1rem 1.2rem;
+    overflow-y: auto;
+}
+
+
+/* 🔥 Responsif di HP */
+@media (max-width: 575.98px) {
+    .modal-detail-saldo {
+        max-width: 92vw;
+        /* sedikit melebar */
+        margin: 1rem auto;
+        /* beri sedikit jarak */
+    }
+
+    .modal-detail-saldo .modal-content {
+        max-height: 75vh;
+        /* jangan terlalu tinggi */
+        border-radius: 10px;
+    }
+
+    .modal-detail-saldo .modal-body {
+        padding: 1rem;
+    }
+}
+
+/* ===================================
+   TABEL STYLE
+   =================================== */
+
+.table-responsive {
+    overflow-x: auto !important;
+}
+
+table td {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+.table-detail {
+    table-layout: auto !important;
+    width: 100% !important;
+}
+
+.table-detail td,
+.table-detail th {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+.table-detail td {
+    padding: 6px 8px !important;
+}
+
+.table-detail th {
+    padding: 8px !important;
+}
+
+/* ===================================
+   BUKTI STYLE
+   =================================== */
+/* .bukti-thumb {
+    width: 60px; 
+    height: 60px; 
+    max-width: 55px;
+    max-height: 55px;
+    object-fit: cover; 
+    cursor: pointer; 
+    transition: transform .2s, box-shadow .2s;
+} */
+
+.bukti-thumb {
+    max-width: 50px;
+    max-height: 50px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bukti-thumb:hover,
+.img-thumbnail:hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+    .bukti-thumb {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.detail-row {
+    background: #F9FAFB;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E5E7EB;
+}
+
+.detail-row .label {
+    font-weight: 600;
+    color: #6B7280;
+}
+
+.detail-row .value {
+    font-weight: 600;
+    color: #111827;
+}
+
+.truncate {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

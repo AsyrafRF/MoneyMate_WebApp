@@ -1,0 +1,36 @@
+<?php
+
+// app/Events/NewNotificationEvent.php
+namespace App\Events;
+
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+use App\Models\Notifikasi;
+
+class NewNotificationEvent implements ShouldBroadcastNow
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    public $notification;
+
+    public function __construct(Notifikasi $notification)
+    {
+        $this->notification = $notification;
+    }
+
+    public function broadcastOn()
+    {
+        // channel private untuk user tertentu
+        return new PrivateChannel('notifications.' . $this->notification->user_id);
+    }
+
+    public function broadcastAs()
+    {
+        return 'new-notification';
+    }
+}

@@ -1,0 +1,21 @@
+/* Menyelaraskan kotak Tom Select agar pas dengan tinggi form Bootstrap 5 */
+.ts-wrapper.form-control,
+.ts-wrapper.form-select {
+    padding: 0 !important;
+    height: auto;
+    box-shadow: none !important;
+}
+
+.ts-control {
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0.375rem !important;
+    background-color: #fff !important;
+}
+
+/* Mengatur tatanan vertikal teks dan ikon di dalam dropdown */
+.ts-dropdown .option,
+.ts-control .item {
+    display: flex !important;
+    align-items: center !important;
+}

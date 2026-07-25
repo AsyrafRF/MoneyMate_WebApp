@@ -1,0 +1,167 @@
+/* ===================================
+   SUMMARY CARDS - FULLY RESPONSIVE
+   =================================== */
+.summary-card-2 {
+    transition: all 0.3s ease-in-out;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    min-height: clamp(130px, 18vh, 180px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.summary-card-2::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.summary-card-2:hover::before {
+    opacity: 1;
+}
+
+.summary-card-2:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.35);
+}
+
+.summary-card-2 .card-body {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    width: 100%;
+    z-index: 1;
+}
+
+.bg-icon {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+    backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255,255,255,0.3); */
+    transition: all 0.3s ease;
+}
+
+.summary-card-2:hover .bg-icon {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.summary-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 16px);
+    width: 100%;
+}
+
+.summary-item .rounded-3,
+.summary-item .icon {
+    width: clamp(50px, 6vw, 70px);
+    height: clamp(50px, 6vw, 70px);
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    flex-shrink: 0;
+}
+
+.summary-item h6 {
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.summary-item h4 {
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    word-break: break-word;
+    margin: 0;
+    font-weight: 700;
+}
+
+.summary-nominal {
+    display: inline-block;
+    max-width: 100%;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    word-break: break-word;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-success-card {
+    color: #d4edda !important;
+}
+
+/* Card: tinggi seragam untuk semua */
+.summary-card-2 {
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    min-height: 160px;   /* pastikan tinggi tetap sama */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bg-icon {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.summary-card-2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Efek halus untuk ikon */
+.summary-card-2:hover .rounded-3 {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Konten dalam card responsif */
+.summary-item {
+    display: flex;
+    flex-wrap: wrap;             /* konten wrap tanpa menambah tinggi */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Icon responsif */
+.summary-item .rounded-3,
+.summary-item .icon {
+    width: clamp(40px, 5vw, 60px);
+    height: clamp(40px, 5vw, 60px);
+    font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+/* Text */
+.summary-item h6 {
+    font-size: clamp(0.75rem, 1.1vw, 1rem);
+    margin: 0;
+}
+
+.summary-item h4 {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    word-break: break-word;
+    max-width: 150px;     /* cegah teks melebar */
+    margin: 0;
+}
+
+.summary-nominal {
+    text-wrap: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.6rem; /* ukuran awal */
+}

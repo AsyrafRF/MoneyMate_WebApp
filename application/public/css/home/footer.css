@@ -1,0 +1,80 @@
+.footer-custom {
+    background: linear-gradient(160deg, var(--dark-bg) 0%, #0f172a 100%);
+    font-size: 0.95rem;
+    padding-bottom: 40px; /* biar nutup sampai bawah */
+}
+
+.footer-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #289fda;
+}
+
+.footer-custom a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-custom a:hover {
+    color: #289fda;
+}
+
+.footer-line {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-desc {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 8px;
+}
+
+.footer-logo {
+    height: 28px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.footer-icon {
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+.footer-icon i {
+    font-size: 1.5rem;
+    color: #289fda;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.footer-icon i:hover {
+    transform: scale(1.2);
+    color: #63b3ed; /* biru lebih terang saat hover */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 1.2rem;
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #289fda;
+    transform: translateY(-3px);
+}
+
+.text-accent {
+    color: #289fda;
+    font-weight: 600;
+}
+
+/* ✅ Flexbox untuk sejajarkan tinggi kolom */
+.footer-custom .row {
+    display: flex;
+    align-items: stretch;
+}
+.footer-custom .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

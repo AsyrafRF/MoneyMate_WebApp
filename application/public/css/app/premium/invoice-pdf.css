@@ -1,0 +1,153 @@
+/* 1. Definisi Ukuran A4 */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    font-family: DejaVu Sans, sans-serif;
+    font-size: 12px;
+    /* Turunkan sedikit dari 13px */
+    background: #fff;
+    /* Putih bersih untuk cetak */
+    color: #2c3e50;
+    margin: 30px 40px;
+    /* Margin lebih ramping */
+    line-height: 1.4;
+}
+
+.invoice-box {
+    width: 100%;
+    position: relative;
+}
+
+/* HEADER */
+.header {
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header-table {
+    width: 100%;
+}
+
+.header-table td {
+    vertical-align: top;
+}
+
+.invoice-title {
+    font-size: 28px;
+    /* Sedikit lebih kecil */
+    font-weight: bold;
+    color: #17324D;
+}
+
+.invoice-number {
+    font-size: 16px;
+    color: #666;
+}
+
+.invoice-date {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* CUSTOMER BOX */
+.customer-box {
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.customer-box table {
+    width: 100%;
+}
+
+.customer-box td {
+    padding: 3px 0;
+    /* Perkecil padding baris */
+}
+
+.label {
+    width: 180px;
+    font-weight: bold;
+}
+
+/* GREETING */
+.greeting {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.greeting strong {
+    font-size: 16px;
+}
+
+/* TABLE INVOICE */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table td {
+    padding: 8px;
+    /* Lebih rapat */
+    border: 1px solid #eee;
+}
+
+.table tr.heading td {
+    background: #f1f5f9;
+    color: #17324D;
+    font-weight: bold;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.text-muted {
+    color: #7f8c8d;
+    font-size: 11px;
+    margin-top: 4px;
+    display: block;
+}
+
+/* THANK YOU & SIGNATURE */
+.thank-you {
+    margin-top: 30px;
+    /* Kurangi drastis dari 80px */
+    color: #555;
+}
+
+.signature {
+    margin-top: 40px;
+    /* Kurangi drastis dari 100px */
+    font-weight: bold;
+    color: #17324D;
+}
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    right: 40px;
+    font-size: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
+
+.footer-table {
+    width: 100%;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}

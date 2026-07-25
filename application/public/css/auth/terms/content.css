@@ -1,0 +1,161 @@
+/* public/css/auth/terms/content.css */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* =========================
+   Light Mode Palette
+========================= */
+:root {
+    --primary: #0ea5e9;
+    --primary-soft: #dff6ff;
+    --primary-border: #bfe8f7;
+
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-soft: #64748b;
+
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-soft: rgba(255, 255, 255, 0.55);
+
+    --hover-bg: rgba(14, 165, 233, 0.08);
+    --hover-border: rgba(14, 165, 233, 0.35);
+
+    --table-head: rgba(14, 165, 233, 0.08);
+    --table-row-hover: rgba(14, 165, 233, 0.03);
+
+    --shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   Glass
+========================= */
+.glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.7);
+
+    box-shadow: var(--shadow);
+}
+
+.glass-light {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    background: var(--surface-soft);
+    border: 1px solid rgba(255,255,255,0.75);
+
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================
+   Doc tabs
+========================= */
+.doc-tab {
+    position: relative;
+    transition: all 0.25s ease;
+    color: var(--text-soft);
+}
+
+.doc-tab::after {
+    content: '';
+    position: absolute;
+
+    bottom: -2px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+    border-radius: 999px;
+
+    transition: width 0.25s ease;
+}
+
+.doc-tab:hover::after,
+.doc-tab.active::after {
+    width: 100%;
+}
+
+.doc-tab:hover {
+    color: var(--primary);
+}
+
+.doc-tab.active {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* =========================
+   Article cards
+========================= */
+.article-card {
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease;
+
+    background: rgba(255,255,255,0.35);
+}
+
+.article-card:hover {
+    border-left-color: var(--hover-border);
+    background: var(--hover-bg);
+
+    transform: translateX(2px);
+}
+
+/* =========================
+   List styling
+========================= */
+.legal-list li {
+    position: relative;
+    padding-left: 1.25rem;
+
+    color: var(--text-muted);
+}
+
+.legal-list li::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: var(--primary);
+
+    opacity: 0.75;
+}
+
+.legal-list.zebra li {
+    padding-left: 0;
+}
+
+.legal-list.zebra li::before {
+    display: none;
+}
+
+/* =========================
+   Table
+========================= */
+.legal-table {
+    border-collapse: collapse;
+}
+
+.legal-table th {
+    background: var(--table-head);
+    color: var(--text-main);
+}
+
+.legal-table td {
+    color: var(--text-muted);
+}
+
+.legal-table tr:hover td {
+    background: var(--table-row-hover);
+}

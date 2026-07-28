@@ -392,4 +392,78 @@ Jika Anda mengalami kendala saat mengakses Web App di `app.moneymate.id` atau me
 
 ---
 
+# 👨‍💻 Tim Pengembang
+
+MoneyMate dikembangkan secara kolaboratif oleh tim multidisiplin yang berfokus pada pengembangan produk, pengalaman pengguna, kualitas perangkat lunak, serta strategi bisnis. Setiap anggota memiliki peran penting dalam mewujudkan MoneyMate sebagai platform manajemen keuangan yang modern, aman, dan mudah digunakan.
+
+## 🧑‍💼 Project Leadership & Business Strategy
+
+### **[Nurul Amalia Ramadhani](https://www.linkedin.com/in/nurul-amalia-ramadhani-020730278/)**
+**Team Leader & Business Analyst**
+
+**Kontribusi:**
+- Memimpin keseluruhan pengembangan proyek MoneyMate.
+- Menyusun product vision, roadmap, dan strategi pengembangan.
+- Melakukan analisis kebutuhan pengguna serta kebutuhan bisnis.
+- Menyusun dokumentasi kebutuhan sistem (Software Requirements).
+- Menjadi penghubung antara kebutuhan bisnis dan implementasi teknis.
+
+---
+
+## 🎨 User Experience & Frontend Development
+
+### **[Fauzan Alwan](https://www.linkedin.com/in/fauzan-alwan-87a568409/)**
+**UI/UX Designer & Frontend Developer**
+
+**Kontribusi:**
+- Mendesain identitas visual dan antarmuka aplikasi.
+- Merancang user flow serta pengalaman pengguna (UX).
+- Mengimplementasikan desain menjadi antarmuka web yang responsif.
+- Mengembangkan halaman dashboard, transaksi, anggaran, laporan, dan visualisasi data.
+- Memastikan konsistensi desain pada seluruh halaman aplikasi.
+
+---
+
+## ⚙️ Backend Engineering & Infrastructure
+
+### **[Daniel Charlie Samuel](https://www.linkedin.com/in/daniel-charlie-samuel-siburian-1a9a162a3/)**
+**Fullstack Developer & Backend Support**
+
+**Kontribusi:**
+- Mengembangkan fitur backend dan integrasi dengan frontend.
+- Mendesain struktur database dan API aplikasi.
+- Mengimplementasikan autentikasi, otorisasi, dan pengelolaan data pengguna.
+- Mendukung pengembangan fitur fullstack pada berbagai modul MoneyMate.
+- Berkolaborasi dalam optimasi performa aplikasi.
+
+### **[Asyraf Rais Fadhil](https://www.linkedin.com/in/asyraf-rais-fadhil/)**
+**Backend Developer & DevOps Engineer**
+
+**Kontribusi:**
+- Mengembangkan layanan backend dan business logic aplikasi.
+- Mengelola deployment, server, dan infrastruktur cloud.
+- Mengoptimalkan keamanan aplikasi dan konfigurasi server.
+- Mengelola pipeline deployment dan monitoring sistem.
+- Menjaga stabilitas, skalabilitas, dan ketersediaan aplikasi.
+
+---
+
+## 🧪 Quality Assurance & Marketing
+
+### **[Cahya Trixie Ariella](https://www.linkedin.com/in/cahya-trixie-ariella-sitorus-512779326/)**
+**QA Tester & Marketing**
+
+**Kontribusi:**
+- Melakukan pengujian fungsionalitas seluruh fitur aplikasi.
+- Menemukan, mendokumentasikan, dan memverifikasi perbaikan bug.
+- Memastikan kualitas aplikasi sebelum proses rilis.
+- Menyusun strategi pemasaran dan promosi MoneyMate.
+- Mengelola komunikasi produk melalui media sosial dan branding.
+
+---
+
+## 🤝 Kolaborasi Tim
+
+MoneyMate dikembangkan menggunakan pendekatan kolaboratif, di mana setiap anggota berkontribusi sesuai bidang keahliannya. Mulai dari analisis kebutuhan, perancangan UI/UX, pengembangan frontend dan backend, pengujian kualitas, hingga deployment serta strategi pemasaran dilakukan secara terintegrasi untuk menghadirkan pengalaman terbaik bagi pengguna.
+
 <p align="center">With ❤️ by MoneyMate Teams</p>
